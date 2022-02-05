@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class TakeScreenshot {
     public static final long serialVersionUID = 1L;
 
-    public static void main(String[] args) {
+    public static void Take_Screenshot() {
         try {
             Thread.sleep(120);
             Robot r = new Robot();
