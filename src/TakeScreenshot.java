@@ -10,13 +10,13 @@ import javax.imageio.ImageIO;
 public class TakeScreenshot {
     public static final long serialVersionUID = 1L;
 
-    public static void Take_Screenshot(int i) {
+    public static void Take_Screenshot(String now) {
         try {
             Thread.sleep(120);
             Robot r = new Robot();
 
             // It saves screenshot to desired path
-            String path = "D://Shots/" + i + ".png";
+            String path = "D://Shots/" + now + ".png";
 
             // Used to get ScreenSize and capture image
             Rectangle capture =
