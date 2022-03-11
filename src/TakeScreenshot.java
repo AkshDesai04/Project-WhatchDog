@@ -23,7 +23,7 @@ public class TakeScreenshot {
             BufferedImage Image = r.createScreenCapture(capture);
             ImageIO.write(Image, "png", new File(path));
             System.out.println("Screenshot saved");
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         }
         catch (AWTException | IOException | InterruptedException ex) {
             System.out.println(ex);
