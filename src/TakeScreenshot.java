@@ -1,9 +1,7 @@
-import java.awt.AWTException;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.io.File;
 import javax.imageio.ImageIO;
 
@@ -22,10 +20,9 @@ public class TakeScreenshot {
                     new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
             BufferedImage Image = r.createScreenCapture(capture);
             ImageIO.write(Image, "png", new File(path));
-            System.out.println("Screenshot saved");
-            Thread.sleep(3000);
+            System.out.println("Screenshot saved New");
         }
-        catch (AWTException | IOException | InterruptedException ex) {
+        catch (Exception ex) {
             System.out.println(ex);
         }
     }
