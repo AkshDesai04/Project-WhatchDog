@@ -12,7 +12,6 @@ public class TakeScreenshot {
 
     public static void Take_Screenshot(String now) {
         try {
-            Thread.sleep(120);
             Robot r = new Robot();
 
             // It saves screenshot to desired path
@@ -24,6 +23,7 @@ public class TakeScreenshot {
             BufferedImage Image = r.createScreenCapture(capture);
             ImageIO.write(Image, "png", new File(path));
             System.out.println("Screenshot saved");
+            Thread.sleep(1000);
         }
         catch (AWTException | IOException | InterruptedException ex) {
             System.out.println(ex);
