@@ -119,3 +119,21 @@ public class SmilePlease {
     //     th.start();
     // }
 }
+/*                              Errors in above program : 
+private Webcam openWebcam(Webcam webcam, Dimension dimension) 
+                              ^
+  symbol:   class Webcam
+  location: class TakeSnapshot
+TakeSnapshot.java:21: error: cannot find symbol
+                Webcam webcam = Webcam.getDefault();
+                                ^
+  symbol:   variable Webcam
+  location: class TakeSnapshot
+TakeSnapshot.java:23: error: cannot find symbol
+        if (webcam.open() && isStarted() && !dimension.equals(webcam.getViewSize())) {
+                             ^
+  symbol:   method isStarted()
+  location: class TakeSnapshot
+TakeSnapshot.java:37: error: package Toolkit does not exist       
+        Dimension size = Toolkit.getDefaultToolkit.getViewSize();
+*/
