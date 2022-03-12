@@ -118,4 +118,44 @@ public class SmilePlease {
     //     Thread th = new Thread(gs);
     //     th.start();
     // }
+//}
+    
+    import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+public class SmilePlease {
+
+	public static void main(String[] args) throws IOException {
+
+		// get default webcam and open it
+		Webcam webcam = Webcam.getDefault();
+		webcam.open();
+
+		// save image to PNG file
+		ImageIO.write(webcam.getImage(), "JPG", new File("smile.jpg"));
+	}
+    public boolean open(){
+        return open(false);
+    }
+    private boolean open(boolean b) {
+        return false;
+    }
+    private Webcam openWebcam(Webcam webcam, Dimension dimension) 
+    {
+        if (webcam.open() && isStarted() && !dimension.equals(webcam.getViewSize())) {
+          webcam.close();
+        } 
+        
+        if (!webcam.open() && dimension != null) {
+          webcam.setCustomViewSizes(new Dimension[]{dimension});
+          webcam.setViewSize(dimension);
+          webcam.open(true);
+        } else if (!webcam.open()) {
+          webcam.open(true);
+        }
+        return webcam;
+    }
+    public class Dimension{
+        Dimension size = Toolkit.getDefaultToolkit.getViewSize();
+    }
 }
